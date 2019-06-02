@@ -1,1 +1,1 @@
-$('body').css({background: 'purple'})
+$('body').css({background: 'pink'})
