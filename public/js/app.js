@@ -41,3 +41,28 @@ $('.box-2').on({
         })
     }                                                                                          
 });
+
+// event objects
+    // we have an anchor link in the html in box-1(top/bottom.html) that will send the page somewwhere. how do we stop that??
+    // us eventPreventDefault
+$(function() {
+    $('.box-1 a').on('click',function(event) {
+        event.preventDefault()
+        $('.box-3').css({
+            background:'brown'
+        })
+    })
+
+    $('.box-2').on('click',function(){
+        $('.box-3').css({
+            background:'lightblue'
+        })
+    })
+
+    $('.button').on('click',function(event){
+        event.stopPropagation() //stopProgagation allows events to be passed within the parent div otherwise box 3 would still be lightblue even if the button was clicked.
+        $('.box-3').css({
+            background:'darkblue'
+        })
+    })
+});
