@@ -1,3 +1,4 @@
+// browsder events
 $(function() {
     $(window).resize(function() {
         if ($(window).width() > 1000) { // if window is greater than 1000px, change color to purple
@@ -14,4 +15,29 @@ $(function() {
             })
         }
     })
+});
+
+// event handler
+$(function() {
+    $('.box-1').on('click',function() { // change background color to red if clicked
+        $('.box-1').css({
+            background:'red'
+        })
+    })
+});
+
+$('.box-2').on({
+    click:function() {
+        $('.box-2').css({
+            background:'orange'
+        })
+    },mouseenter:function() {
+        $('.box-2').css({
+            background:'blue'
+        })
+    },mouseleave:function() {
+        $('.box-2').css({
+            background:'green'
+        })
+    }                                                                                          
 });
